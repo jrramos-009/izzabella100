@@ -1,0 +1,854 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Izza and Bella, one hundred days</title>
+<meta name="description" content="Please join us to celebrate Izza and Bella, one hundred days. Wednesday 30 September, 7:00pm.">
+<meta name="theme-color" content="#FBF6F2">
+
+<!--
+  ============================================================================
+  WHAT TO EDIT, AND WHERE
+  ============================================================================
+  1. PHOTOS          line 525
+                     Drop these files into the sibling /photos folder:
+                       photos/hero.mp4  photos/hero-hevc.mp4   (the hero clip)
+                       photos/hero-poster.jpg                  (its first frame)
+                       photos/01.webp photos/02.webp photos/03.webp
+                     Any file that is missing shows a dashed placeholder with
+                     its filename, so you can see at a glance what is still
+                     outstanding. Update the alt text on each one too.
+
+  2. CHINESE_NAMES   line 516
+                     Replace [伊莎 / 貝拉] with the girls' real Chinese names.
+
+  3. VENUE_TBA       line 579
+                     Replace the "to be announced" block once the restaurant
+                     is booked. Keep the Chinese line in step with it.
+
+  4. WHATSAPP        The number appears twice: as a wa.me link under the form,
+                     and as the WHATSAPP variable in the script at the bottom
+                     (used in the error message). Change BOTH if it ever moves.
+
+  Everything else (date, time, meal, deadline) is plain text in the markup.
+  ============================================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..700,0..100,0..1&family=Instrument+Sans:wght@400;500;600&family=Noto+Serif+TC:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --paper:      #FBF6F2;
+    --ink:        #3D2129;
+    --ink-soft:   #6B4A52;
+    --blush:      #F3DAD6;
+    --rose:       #A83B54;
+    --rose-deep:  #7C2438;
+    --gold:       #9A7B3F;
+    --gold-ink:   #7A5C2E;
+    --gold-light: #E8C48A;
+
+    --display: 'Fraunces', 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif;
+    --sans: 'Instrument Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --han: 'Noto Serif TC', 'Songti TC', 'PingFang TC', 'Microsoft JhengHei', serif;
+
+    --s--1: 0.8125rem;
+    --s-0:  1rem;
+    --s-1:  1.1875rem;
+    --s-2:  clamp(1.375rem, 1.2rem + 1.4vw, 1.75rem);
+    --s-3:  clamp(1.75rem, 1.4rem + 2.4vw, 2.5rem);
+    --s-4:  clamp(2.875rem, 1.5rem + 10vw, 5rem);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body{
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: var(--s-0);
+    line-height: 1.62;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3 { font-family: var(--display); font-weight: 400; margin: 0;
+    font-variation-settings: 'SOFT' 40, 'WONK' 1; }
+
+  p { margin: 0; }
+
+  .wrap{ width: min(100% - 2.5rem, 34rem); margin-inline: auto; }
+
+  /* Chinese: always one step down, always subordinate */
+  .zh{ font-family: var(--han); font-size: 0.78em; color: var(--gold-ink);
+       letter-spacing: .04em; font-weight: 500; }
+
+  a{ color: var(--rose); }
+
+  :focus-visible{ outline: 2px solid var(--rose); outline-offset: 3px; border-radius: 2px; }
+  .on-rose :focus-visible{ outline-color: var(--gold-light); }
+
+  /* --------------------------------------------------------------- opening */
+  .opening{ position: relative; padding: 3.25rem 0 2.75rem; overflow: hidden; }
+
+  .peony{ color: var(--gold); display: block; pointer-events: none; }
+
+  .peony--opening{
+    position: absolute;
+    width: 15rem; height: 15rem;
+    top: -1.5rem; right: -5.5rem;
+    opacity: .34;
+  }
+
+  .invite{
+    font-size: var(--s--1);
+    color: var(--ink-soft);
+    margin-bottom: 1.4rem;
+  }
+  .invite .zh{ font-size: 0.95em; }
+
+  .names{
+    font-size: var(--s-4);
+    line-height: .96;
+    letter-spacing: -.015em;
+    font-weight: 380;
+    max-width: 9em;
+  }
+  .names .amp{
+    font-style: italic;
+    font-weight: 300;
+    color: var(--rose);
+    font-size: .62em;
+    padding: 0 .06em;
+  }
+
+  .names-zh{
+    font-family: var(--han);
+    font-size: var(--s-1);
+    color: var(--gold-ink);
+    letter-spacing: .14em;
+    margin-top: .7rem;
+  }
+
+  .occasion{
+    margin-top: 1.6rem;
+    padding-top: 1.1rem;
+    border-top: 1px solid color-mix(in srgb, var(--gold) 45%, transparent);
+    max-width: 22rem;
+    font-family: var(--display);
+    font-size: var(--s-2);
+    color: var(--rose);
+    font-variation-settings: 'SOFT' 40, 'WONK' 1;
+  }
+  .occasion .zh{ color: var(--gold-ink); display: block; margin-top: .3rem; white-space: nowrap; }
+
+  .lede{
+    margin-top: 1.15rem;
+    max-width: 26rem;
+    color: var(--ink-soft);
+    font-size: var(--s-0);
+  }
+
+  /* --------------------------------------------------------------- gallery */
+  /* the one loud thing on the page */
+  .gallery{
+    background: var(--rose-deep);
+    color: var(--paper);
+    padding: 2.75rem 0 3.25rem;
+  }
+
+  .gallery__head{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.75rem;
+  }
+  .gallery h2{
+    font-size: var(--s-2);
+    color: var(--paper);
+    font-weight: 340;
+  }
+  .gallery h2 .zh{ color: var(--gold-light); display: block; margin-top: .3rem; font-size: .62em; }
+
+  /* 雙喜, used exactly once, as a stamped mark */
+  .double-happiness{
+    font-family: var(--han);
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: .22em;
+    color: var(--gold-light);
+    border: 1px solid color-mix(in srgb, var(--gold-light) 55%, transparent);
+    padding: .3rem .35rem .3rem .55rem;
+    line-height: 1;
+    align-self: center;
+  }
+
+  .shots{ display: grid; grid-template-columns: 1fr 1fr; gap: .75rem 1rem; }
+
+  .shot{
+    /* a button so it is tappable and keyboard reachable for free */
+    display: block; width: 100%; padding: 0; margin: 0;
+    border: 0; background: none; cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .shot__frame{
+    display: block;
+    overflow: hidden;
+    background: color-mix(in srgb, var(--rose-deep) 78%, #000);
+    /* the aperture: rectangular, with the same corner the frames always had */
+    border-radius: 8px;
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--gold-light) 40%, transparent);
+    aspect-ratio: 4 / 5;
+  }
+  .shot img, .shot video{
+    display: block; width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform .5s cubic-bezier(.2,.7,.3,1);
+  }
+  .shot:hover img, .shot:focus-visible img{ transform: scale(1.035); }
+
+  .shot--hero{ grid-column: 1 / -1; }
+  .shot--hero .shot__frame{ aspect-ratio: 5 / 6; }
+
+  /* the hero clip is square, as it was filmed, so nothing is cropped away.
+     This has to sit after .shot--hero to win the cascade. */
+  .shot--video{ cursor: default; }
+  .shot--video .shot__frame{ aspect-ratio: 1 / 1; }
+
+  .shot--wide{ grid-column: 1 / -1; margin-top: .5rem; }
+  .shot--wide .shot__frame{
+    aspect-ratio: 5 / 4;
+  }
+
+
+  .shot__cap{
+    display: block;
+    font-size: 0.6875rem;
+    letter-spacing: .06em;
+    color: color-mix(in srgb, var(--gold-light) 80%, transparent);
+    margin-top: .5rem;
+    text-align: left;
+  }
+
+  /* missing photo placeholder, so the host can see what is outstanding */
+  .shot[disabled]{ cursor: default; }
+  .missing{
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: .4rem; height: 100%; padding: .75rem;
+    border: 1px dashed color-mix(in srgb, var(--gold-light) 65%, transparent);
+    border-radius: inherit;
+    color: var(--gold-light);
+    text-align: center;
+  }
+  .missing b{ font-weight: 500; font-size: .75rem; letter-spacing: .08em; text-transform: none; }
+  .missing code{
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: .6875rem; word-break: break-all; opacity: .85;
+  }
+
+  /* --------------------------------------------------------------- details */
+  .details{ padding: 3rem 0 2.5rem; }
+  .details h2{
+    font-size: var(--s-3);
+    color: var(--rose);
+    font-weight: 340;
+    margin-bottom: 1.75rem;
+  }
+  .details h2 .zh{ display: block; margin-top: .35rem; font-size: .58em; }
+
+  .facts{ margin: 0; }
+  .facts > div{
+    padding: .95rem 0;
+    border-top: 1px solid color-mix(in srgb, var(--gold) 30%, transparent);
+    display: grid;
+    grid-template-columns: 5.5rem 1fr;
+    gap: .35rem 1rem;
+    align-items: baseline;
+  }
+  .facts > div:last-child{ border-bottom: 1px solid color-mix(in srgb, var(--gold) 30%, transparent); }
+  .facts dt{
+    font-size: var(--s--1);
+    color: var(--ink-soft);
+    letter-spacing: .01em;
+  }
+  .facts dd{
+    margin: 0;
+    font-family: var(--display);
+    font-size: var(--s-1);
+    font-variation-settings: 'SOFT' 40, 'WONK' 1;
+  }
+  .facts dd .zh{ display: block; margin-top: .15rem; font-family: var(--han); }
+  .facts .aside{
+    grid-column: 2;
+    font-family: var(--sans);
+    font-size: var(--s--1);
+    color: var(--ink-soft);
+    margin-top: .45rem;
+    max-width: 26rem;
+  }
+
+  @media (max-width: 24rem){
+    .facts > div{ grid-template-columns: 1fr; }
+    .facts .aside{ grid-column: 1; }
+  }
+
+  /* ------------------------------------------------------------------ rsvp */
+  .rsvp{ padding: 1.25rem 0 3rem; }
+
+  .rule-peony{
+    display: flex; align-items: center; gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .rule-peony::before, .rule-peony::after{
+    content: ""; flex: 1 1 auto; height: 1px;
+    background: color-mix(in srgb, var(--gold) 45%, transparent);
+  }
+  .rule-peony .peony{ width: 2.25rem; height: 2.25rem; flex: none; }
+
+  .rsvp h2{
+    font-size: var(--s-3);
+    color: var(--rose);
+    font-weight: 340;
+    text-align: center;
+  }
+  .rsvp h2 .zh{ display: block; margin-top: .3rem; font-size: .58em; }
+  .deadline{
+    text-align: center;
+    font-size: var(--s--1);
+    color: var(--ink-soft);
+    margin-top: .6rem;
+  }
+
+  form{ margin-top: 2rem; }
+
+  .field{ margin-bottom: 1.25rem; }
+  .field > label, .legend{
+    display: block;
+    font-size: var(--s--1);
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: .4rem;
+  }
+  .field .zh, .legend .zh{ font-weight: 500; margin-left: .35rem; }
+
+  input[type="text"], input[type="number"]{
+    width: 100%;
+    font: inherit;
+    font-size: 1rem; /* 16px, stops mobile browsers zooming on focus */
+    color: var(--ink);
+    background: #fff;
+    border: 1px solid color-mix(in srgb, var(--rose) 32%, var(--paper));
+    border-radius: 4px;
+    padding: .7rem .75rem;
+    min-height: 2.9rem;
+  }
+  input::placeholder{ color: color-mix(in srgb, var(--ink-soft) 65%, transparent); }
+  input:focus{ border-color: var(--rose); }
+
+  fieldset{ border: 0; margin: 0 0 1.25rem; padding: 0; }
+
+  .choices{ display: grid; gap: .5rem; }
+  .choice{
+    display: flex; align-items: center; gap: .65rem;
+    border: 1px solid color-mix(in srgb, var(--rose) 32%, var(--paper));
+    border-radius: 4px;
+    padding: .7rem .75rem;
+    min-height: 2.9rem;
+    cursor: pointer;
+  }
+  .choice input{ accent-color: var(--rose); width: 1.15rem; height: 1.15rem; flex: none; margin: 0; }
+  .choice:has(input:checked){
+    border-color: var(--rose);
+    background: color-mix(in srgb, var(--blush) 55%, var(--paper));
+  }
+  .choice:has(input:focus-visible){ outline: 2px solid var(--rose); outline-offset: 3px; }
+  .choice span{ font-size: var(--s-0); }
+
+  .counts{ display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  @media (max-width: 24rem){ .counts{ grid-template-columns: 1fr; } }
+  .counts[hidden]{ display: none; }
+
+  .hidden-field{ position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+  button.send{
+    width: 100%;
+    font: inherit;
+    font-weight: 600;
+    letter-spacing: .02em;
+    color: var(--paper);
+    background: var(--rose);
+    border: 0;
+    border-radius: 4px;
+    padding: .95rem 1rem;
+    min-height: 3.1rem;
+    cursor: pointer;
+    margin-top: .5rem;
+  }
+  button.send:hover{ background: var(--rose-deep); }
+  button.send[disabled]{ background: var(--ink-soft); cursor: progress; }
+
+  .form-note{
+    font-size: var(--s--1);
+    color: var(--ink-soft);
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  .error{
+    margin-top: 1rem;
+    padding: .8rem .9rem;
+    border-left: 3px solid var(--rose);
+    background: color-mix(in srgb, var(--blush) 50%, var(--paper));
+    font-size: var(--s--1);
+    color: var(--ink);
+  }
+  .error[hidden]{ display: none; }
+
+  .thanks{
+    text-align: center;
+    padding: 2rem 0 .5rem;
+  }
+  .thanks h3{
+    font-size: var(--s-2);
+    color: var(--rose);
+    font-weight: 340;
+  }
+  .thanks .zh{ display: block; margin-top: .4rem; }
+  .thanks p{ margin-top: .9rem; color: var(--ink-soft); font-size: var(--s-0); }
+
+  /* --------------------------------------------------------------- closing */
+  .closing{
+    text-align: center;
+    padding: 1rem 0 4rem;
+  }
+  .closing .peony{ width: 3rem; height: 3rem; margin: 0 auto 1.1rem; }
+  .closing .hundred{
+    font-family: var(--han);
+    font-size: var(--s-3);
+    font-weight: 500;
+    color: var(--rose);
+    letter-spacing: .18em;
+    text-indent: .18em;
+  }
+  .closing .love{
+    font-family: var(--display);
+    font-variation-settings: 'SOFT' 40, 'WONK' 1;
+    font-size: var(--s-1);
+    color: var(--ink-soft);
+    margin-top: .9rem;
+  }
+
+  /* ------------------------------------------------------------- lightbox */
+  .lightbox{
+    position: fixed; inset: 0; z-index: 50;
+    background: rgba(38, 14, 20, .94);
+    display: grid; place-items: center;
+    padding: 1.25rem;
+  }
+  .lightbox[hidden]{ display: none; }
+  .lightbox img{
+    max-width: min(100%, 46rem);
+    max-height: 84vh;
+    border-radius: 4px;
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--gold-light) 35%, transparent);
+  }
+  .lightbox__close{
+    position: absolute; top: .75rem; right: .75rem;
+    width: 2.75rem; height: 2.75rem;
+    display: grid; place-items: center;
+    font-size: 1.5rem; line-height: 1;
+    color: var(--paper);
+    background: rgba(255,255,255,.12);
+    border: 1px solid rgba(255,255,255,.3);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .lightbox__close:focus-visible{ outline: 2px solid var(--gold-light); outline-offset: 3px; }
+
+  /* ----------------------------------------------- the one page load reveal */
+  .rise{ opacity: 0; transform: translateY(12px); animation: rise .8s cubic-bezier(.2,.7,.3,1) var(--d, 0s) forwards; }
+  @keyframes rise{ to{ opacity: 1; transform: none; } }
+
+  @media (prefers-reduced-motion: reduce){
+    .rise{ animation: none; opacity: 1; transform: none; }
+    *, *::before, *::after{ transition-duration: .01ms !important; animation-duration: .01ms !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- peony line art, drawn once and referenced three times: opening, rsvp, closing -->
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+  <symbol id="peony" viewBox="0 0 120 120">
+    <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <g>
+        <path d="M60 62C42 55 36 34 60 20C84 34 78 55 60 62Z"/>
+        <path d="M60 62C42 55 36 34 60 20C84 34 78 55 60 62Z" transform="rotate(72 60 60)"/>
+        <path d="M60 62C42 55 36 34 60 20C84 34 78 55 60 62Z" transform="rotate(144 60 60)"/>
+        <path d="M60 62C42 55 36 34 60 20C84 34 78 55 60 62Z" transform="rotate(216 60 60)"/>
+        <path d="M60 62C42 55 36 34 60 20C84 34 78 55 60 62Z" transform="rotate(288 60 60)"/>
+      </g>
+      <g opacity=".85">
+        <path d="M60 61C49 57 45 45 60 37C75 45 71 57 60 61Z" transform="rotate(36 60 60)"/>
+        <path d="M60 61C49 57 45 45 60 37C75 45 71 57 60 61Z" transform="rotate(108 60 60)"/>
+        <path d="M60 61C49 57 45 45 60 37C75 45 71 57 60 61Z" transform="rotate(180 60 60)"/>
+        <path d="M60 61C49 57 45 45 60 37C75 45 71 57 60 61Z" transform="rotate(252 60 60)"/>
+        <path d="M60 61C49 57 45 45 60 37C75 45 71 57 60 61Z" transform="rotate(324 60 60)"/>
+      </g>
+      <circle cx="60" cy="60" r="4.5"/>
+    </g>
+  </symbol>
+</svg>
+
+<main>
+
+  <!-- ============================================================= opening -->
+  <header class="opening">
+    <svg class="peony peony--opening" aria-hidden="true" focusable="false"><use href="#peony"/></svg>
+    <div class="wrap">
+      <p class="invite rise" style="--d:.05s">Please join us to celebrate <span class="zh" lang="zh-Hant">敬請蒞臨</span></p>
+
+      <h1 class="names rise" style="--d:.16s">Izza <span class="amp">&amp;</span> Bella</h1>
+
+      <!-- CHINESE_NAMES: replace with the girls' real Chinese names -->
+      <p class="names-zh rise" style="--d:.26s" lang="zh-Hant">[伊莎 / 貝拉]</p>
+
+      <p class="occasion rise" style="--d:.36s">One Hundred Days <span class="zh" lang="zh-Hant">百日宴</span></p>
+
+      <p class="lede rise" style="--d:.46s">They were born on 23 June. On 30 September they will be one hundred days old, and that is the evening we would like you to meet them.</p>
+    </div>
+  </header>
+
+  <!-- ============================================================= gallery -->
+  <!-- PHOTOS: four files in the sibling /photos folder. Missing ones show a
+       dashed placeholder with the filename, so nothing goes out unnoticed. -->
+  <section class="gallery on-rose" aria-labelledby="gallery-title">
+    <div class="wrap">
+      <div class="gallery__head">
+        <h2 id="gallery-title">Our first hundred days <span class="zh" lang="zh-Hant">百日留影</span></h2>
+        <span class="double-happiness" lang="zh-Hant" aria-hidden="true">雙喜</span>
+      </div>
+
+      <div class="shots" id="shots">
+        <!-- HERO_CLIP: the still photo is now a short silent loop. The poster
+             is its own first frame, so there is no jump when it starts. -->
+        <div class="shot shot--hero shot--video">
+          <span class="shot__frame">
+            <video id="hero-clip" poster="photos/hero-poster.jpg"
+                   autoplay muted loop playsinline preload="metadata"
+                   aria-label="Izza and Bella side by side in their crib, moving and looking about">
+              <source src="photos/hero-hevc.mp4" type="video/mp4; codecs=hvc1">
+              <source src="photos/hero.mp4" type="video/mp4">
+            </video>
+          </span>
+        </div>
+
+        <button type="button" class="shot" data-src="photos/01.webp" aria-label="Open a larger view of Bella in her bath">
+          <span class="shot__frame"><img src="photos/01.webp" alt="Bella in her bath, holding on to a hand" loading="lazy" decoding="async"></span>
+        </button>
+
+        <button type="button" class="shot" data-src="photos/02.webp" aria-label="Open a larger view of Izza">
+          <span class="shot__frame"><img src="photos/02.webp" alt="Izza looking up from the crook of an arm" loading="lazy" decoding="async"></span>
+        </button>
+
+        <button type="button" class="shot shot--wide" data-src="photos/03.webp" aria-label="Open a larger view of Izza and Bella in their crib">
+          <span class="shot__frame"><img src="photos/03.webp" alt="Izza and Bella lying side by side in their crib" loading="lazy" decoding="async"></span>
+        </button>
+
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================= details -->
+  <section class="details" aria-labelledby="details-title">
+    <div class="wrap">
+      <h2 id="details-title">The celebration <span class="zh" lang="zh-Hant">宴會詳情</span></h2>
+
+      <dl class="facts">
+        <div>
+          <dt>Date</dt>
+          <dd>Wednesday 30 September <span class="zh" lang="zh-Hant">九月三十日 星期三</span></dd>
+          <dd class="aside">Day one hundred, exactly.</dd>
+        </div>
+
+        <div>
+          <dt>Time</dt>
+          <dd>7:00pm to 9:30pm <span class="zh" lang="zh-Hant">晚上七時至九時半</span></dd>
+        </div>
+
+        <div>
+          <dt>Dinner</dt>
+          <dd>Buffet dinner at a restaurant <span class="zh" lang="zh-Hant">餐廳自助晚宴</span></dd>
+        </div>
+
+        <!-- VENUE_TBA: replace this whole block once the restaurant is booked -->
+        <div>
+          <dt>Where</dt>
+          <dd>To be announced <span class="zh" lang="zh-Hant">地點稍後公佈</span></dd>
+          <dd class="aside">We are still settling on the restaurant. As soon as it is booked we will message everyone who has replied, so please reply even if you already know you are coming.</dd>
+        </div>
+
+        <div>
+          <dt>Children</dt>
+          <dd>Children are very welcome, please tell us how many <span class="zh" lang="zh-Hant">歡迎攜同小朋友，請告知人數</span></dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ================================================================ rsvp -->
+  <section class="rsvp" aria-labelledby="rsvp-title">
+    <div class="wrap">
+      <div class="rule-peony" aria-hidden="true">
+        <svg class="peony" focusable="false"><use href="#peony"/></svg>
+      </div>
+
+      <h2 id="rsvp-title">Will you join us <span class="zh" lang="zh-Hant">敬請回覆</span></h2>
+      <p class="deadline">Please reply by 13 September <span class="zh" lang="zh-Hant">請於九月十三日前回覆</span></p>
+
+      <div id="form-slot">
+        <form name="rsvp-hundred-days" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="rsvp-form">
+          <input type="hidden" name="form-name" value="rsvp-hundred-days">
+          <p class="hidden-field"><label>Leave this empty <input name="bot-field" tabindex="-1"></label></p>
+
+          <div class="field">
+            <label for="name">Your name <span class="zh" lang="zh-Hant">您的姓名</span></label>
+            <input type="text" id="name" name="name" autocomplete="name" required>
+          </div>
+
+          <fieldset>
+            <legend class="legend">Can you make it <span class="zh" lang="zh-Hant">能否出席</span></legend>
+            <div class="choices">
+              <label class="choice">
+                <input type="radio" name="attending" value="Yes" checked>
+                <span>Yes, we will be there <span class="zh" lang="zh-Hant">我們會出席</span></span>
+              </label>
+              <label class="choice">
+                <input type="radio" name="attending" value="No">
+                <span>Sorry, we cannot come <span class="zh" lang="zh-Hant">恕難出席</span></span>
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="counts" id="counts">
+            <div class="field">
+              <label for="adults">Adults <span class="zh" lang="zh-Hant">成人人數</span></label>
+              <input type="number" id="adults" name="adults" min="0" step="1" inputmode="numeric" value="1">
+            </div>
+            <div class="field">
+              <label for="children">Children <span class="zh" lang="zh-Hant">兒童人數</span></label>
+              <input type="number" id="children" name="children" min="0" step="1" inputmode="numeric" value="0">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="note">Anything we should know <span class="zh" lang="zh-Hant">備註</span></label>
+            <input type="text" id="note" name="note" placeholder="Allergies, a high chair, arriving late">
+          </div>
+
+          <button type="submit" class="send" id="send">Send our reply</button>
+
+          <p class="error" id="form-error" role="alert" hidden></p>
+        </form>
+      </div>
+
+      <p class="form-note">If the form gives you any trouble, just WhatsApp us on
+        <a href="https://wa.me/971543189306">+971 54 318 9306</a>.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================= closing -->
+  <footer class="closing">
+    <div class="wrap">
+      <svg class="peony" aria-hidden="true" focusable="false"><use href="#peony"/></svg>
+      <p class="hundred" lang="zh-Hant">百日快樂</p>
+      <p class="love">With love, Daniel and Robert</p>
+    </div>
+  </footer>
+
+</main>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo" hidden>
+  <button type="button" class="lightbox__close" id="lightbox-close" aria-label="Close photo">&times;</button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  /* same number as the visible line above */
+  var WHATSAPP = '+971 54 318 9306';
+
+  /* ---------------------------------------------------------- photos ---- */
+  /* Any file that fails to load is replaced by a placeholder showing the
+     filename it was looking for, so a missing photo is obvious. */
+  function markMissing(img) {
+    var button = img.closest('.shot');
+    if (!button || button.dataset.missing === '1') return;
+    button.dataset.missing = '1';
+    button.disabled = true;
+    button.removeAttribute('aria-label');
+    var frame = button.querySelector('.shot__frame');
+    var slot = document.createElement('span');
+    slot.className = 'missing';
+    var label = document.createElement('b');
+    label.textContent = 'Photo not added yet';
+    var file = document.createElement('code');
+    file.textContent = button.dataset.src;
+    slot.appendChild(label);
+    slot.appendChild(file);
+    frame.textContent = '';
+    frame.appendChild(slot);
+  }
+
+  /* The hero clip autoplays silently. If the guest's phone or laptop is set
+     to reduce motion, leave it on its poster frame and give them a control
+     instead of moving the picture at them. */
+  var clip = document.getElementById('hero-clip');
+  if (clip && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    clip.autoplay = false;
+    clip.loop = false;
+    clip.controls = true;
+    clip.pause();
+  }
+
+  var images = document.querySelectorAll('.shot img');
+  Array.prototype.forEach.call(images, function (img) {
+    img.addEventListener('error', function () { markMissing(img); });
+    /* catch anything that already failed before this script ran */
+    if (img.complete && img.naturalWidth === 0) markMissing(img);
+  });
+
+  /* -------------------------------------------------------- lightbox ---- */
+  var box = document.getElementById('lightbox');
+  var boxImg = document.getElementById('lightbox-img');
+  var boxClose = document.getElementById('lightbox-close');
+  var lastFocus = null;
+
+  function openBox(src, alt) {
+    lastFocus = document.activeElement;
+    boxImg.src = src;
+    boxImg.alt = alt || '';
+    box.hidden = false;
+    document.body.style.overflow = 'hidden';
+    boxClose.focus();
+  }
+
+  function closeBox() {
+    box.hidden = true;
+    boxImg.src = '';
+    document.body.style.overflow = '';
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+
+  document.getElementById('shots').addEventListener('click', function (event) {
+    var button = event.target.closest('.shot');
+    if (!button || button.disabled) return;
+    var img = button.querySelector('img');
+    openBox(button.dataset.src, img ? img.alt : '');
+  });
+
+  boxClose.addEventListener('click', closeBox);
+  /* a tap on the backdrop dismisses it too */
+  box.addEventListener('click', function (event) {
+    if (event.target === box) closeBox();
+  });
+  document.addEventListener('keydown', function (event) {
+    if (box.hidden) return;
+    if (event.key === 'Escape') closeBox();
+    /* keep focus inside the dialog while it is open */
+    if (event.key === 'Tab') { event.preventDefault(); boxClose.focus(); }
+  });
+
+  /* ------------------------------------------------------------ form ---- */
+  var form = document.getElementById('rsvp-form');
+  var slot = document.getElementById('form-slot');
+  var counts = document.getElementById('counts');
+  var errorBox = document.getElementById('form-error');
+  var send = document.getElementById('send');
+  var radios = form.querySelectorAll('input[name="attending"]');
+
+  function syncCounts() {
+    var yes = form.querySelector('input[name="attending"]:checked').value === 'Yes';
+    counts.hidden = !yes;
+  }
+  Array.prototype.forEach.call(radios, function (radio) {
+    radio.addEventListener('change', syncCounts);
+  });
+  syncCounts();
+
+  function thankYou(attending, name) {
+    var yes = attending === 'Yes';
+    var wrap = document.createElement('div');
+    wrap.className = 'thanks';
+    wrap.setAttribute('role', 'status');
+
+    var head = document.createElement('h3');
+    head.appendChild(document.createTextNode('Thank you, we have your reply '));
+    var zh = document.createElement('span');
+    zh.className = 'zh';
+    zh.lang = 'zh-Hant';
+    zh.textContent = '已收到您的回覆';
+    head.appendChild(zh);
+
+    var body = document.createElement('p');
+    if (yes) {
+      body.textContent = 'We are so glad you can come, ' + name + '. We will message you the restaurant as soon as it is booked.';
+    } else {
+      body.textContent = 'We will miss you, ' + name + '. Thank you for letting us know, and we will send you photos from the night.';
+    }
+
+    wrap.appendChild(head);
+    wrap.appendChild(body);
+    return wrap;
+  }
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    errorBox.hidden = true;
+
+    var data = new FormData(form);
+    var body = new URLSearchParams();
+    data.forEach(function (value, key) { body.append(key, value); });
+
+    var attending = data.get('attending');
+    var name = (data.get('name') || '').trim();
+
+    send.disabled = true;
+    send.textContent = 'Sending';
+
+    /* NOTE: this POST is handled by Netlify Forms and only works on the
+       deployed site. Opening index.html locally will always land in the
+       catch below, which is expected. */
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: body.toString()
+    })
+      .then(function (response) {
+        if (!response.ok) throw new Error('Bad response');
+        slot.textContent = '';
+        slot.appendChild(thankYou(attending, name));
+        slot.scrollIntoView({ block: 'center', behavior: 'smooth' });
+      })
+      .catch(function () {
+        send.disabled = false;
+        send.textContent = 'Send our reply';
+        errorBox.textContent = 'That did not go through. Please try once more, or just WhatsApp us on ' + WHATSAPP + ' and we will add you by hand.';
+        errorBox.hidden = false;
+      });
+  });
+})();
+</script>
+</body>
+</html>
