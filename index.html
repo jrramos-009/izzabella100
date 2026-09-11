@@ -21,7 +21,7 @@
                      outstanding. Update the alt text on each one too.
 
   2. CHINESE_NAMES   line 516
-                     Replace [伊莎 / 貝拉] with the girls' real Chinese names.
+                     Replace [伊莎 / 贝拉] with the girls' real Chinese names (Simplified).
 
   3. WHATSAPP        The number appears twice: as a wa.me link under the form,
                      and as the WHATSAPP variable in the script at the bottom
@@ -33,7 +33,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..700,0..100,0..1&family=Instrument+Sans:wght@400;500;600&family=Noto+Serif+TC:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..700,0..100,0..1&family=Instrument+Sans:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
   :root{
@@ -49,7 +49,7 @@
 
     --display: 'Fraunces', 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif;
     --sans: 'Instrument Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    --han: 'Noto Serif TC', 'Songti TC', 'PingFang TC', 'Microsoft JhengHei', serif;
+    --han: 'Noto Serif SC', 'Songti SC', 'PingFang SC', 'Microsoft YaHei', serif;
 
     --s--1: 0.8125rem;
     --s-0:  1rem;
@@ -173,7 +173,7 @@
   }
   .gallery h2 .zh{ color: var(--gold-light); display: block; margin-top: .3rem; font-size: .62em; }
 
-  /* 雙喜, used exactly once, as a stamped mark */
+  /* 双喜, used exactly once, as a stamped mark */
   .double-happiness{
     font-family: var(--han);
     font-size: 1.5rem;
@@ -509,14 +509,14 @@
   <header class="opening">
     <svg class="peony peony--opening" aria-hidden="true" focusable="false"><use href="#peony"/></svg>
     <div class="wrap">
-      <p class="invite rise" style="--d:.05s">Please join us to celebrate <span class="zh" lang="zh-Hant">敬請蒞臨</span></p>
+      <p class="invite rise" style="--d:.05s">Please join us to celebrate <span class="zh" lang="zh-Hans">敬请莅临</span></p>
 
       <h1 class="names rise" style="--d:.16s">Izza <span class="amp">&amp;</span> Bella</h1>
 
       <!-- CHINESE_NAMES: replace with the girls' real Chinese names -->
-      <p class="names-zh rise" style="--d:.26s" lang="zh-Hant">[伊莎 / 貝拉]</p>
+      <p class="names-zh rise" style="--d:.26s" lang="zh-Hans">[伊莎 / 贝拉]</p>
 
-      <p class="occasion rise" style="--d:.36s">One Hundred Days <span class="zh" lang="zh-Hant">百日宴</span></p>
+      <p class="occasion rise" style="--d:.36s">One Hundred Days <span class="zh" lang="zh-Hans">百日宴</span></p>
 
       <p class="lede rise" style="--d:.46s">They were born on 23 June. On 30 September they will be one hundred days old, and that is the evening we would like you to meet them.</p>
     </div>
@@ -528,8 +528,8 @@
   <section class="gallery on-rose" aria-labelledby="gallery-title">
     <div class="wrap">
       <div class="gallery__head">
-        <h2 id="gallery-title">Our first hundred days <span class="zh" lang="zh-Hant">百日留影</span></h2>
-        <span class="double-happiness" lang="zh-Hant" aria-hidden="true">雙喜</span>
+        <h2 id="gallery-title">Our first hundred days <span class="zh" lang="zh-Hans">百日留影</span></h2>
+        <span class="double-happiness" lang="zh-Hans" aria-hidden="true">双喜</span>
       </div>
 
       <div class="shots" id="shots">
@@ -567,35 +567,35 @@
   <!-- ============================================================= details -->
   <section class="details" aria-labelledby="details-title">
     <div class="wrap">
-      <h2 id="details-title">The celebration <span class="zh" lang="zh-Hant">宴會詳情</span></h2>
+      <h2 id="details-title">The celebration <span class="zh" lang="zh-Hans">宴会详情</span></h2>
 
       <dl class="facts">
         <div>
           <dt>Date</dt>
-          <dd>Wednesday 30 September <span class="zh" lang="zh-Hant">九月三十日 星期三</span></dd>
+          <dd>Wednesday 30 September <span class="zh" lang="zh-Hans">九月三十日 星期三</span></dd>
           <dd class="aside">Day one hundred, exactly.</dd>
         </div>
 
         <div>
           <dt>Time</dt>
-          <dd>6:30pm to 9:30pm <span class="zh" lang="zh-Hant">晚上六時半至九時半</span></dd>
+          <dd>6:30pm to 9:30pm <span class="zh" lang="zh-Hans">晚上六时半至九时半</span></dd>
         </div>
 
         <div>
           <dt>Dinner</dt>
-          <dd>Buffet dinner at a restaurant <span class="zh" lang="zh-Hant">餐廳自助晚宴</span></dd>
+          <dd>Buffet dinner at a restaurant <span class="zh" lang="zh-Hans">餐厅自助晚宴</span></dd>
         </div>
 
         <div>
           <dt>Where</dt>
           <dd><a href="https://maps.app.goo.gl/HdtazdveUMg4Amw27">Caketealicious, Barsha Heights</a></dd>
-          <dd class="aside">DAMAC Executive Properties building, Dubai <span class="zh" lang="zh-Hant">杜拜巴沙高地，DAMAC Executive Properties 大樓</span></dd>
-          <dd class="aside">Free parking inside the building — please have your car model and plate number ready for the parking security entrance. <span class="zh" lang="zh-Hant">大樓內設有免費停車場，請於停車場保安入口準備好您的車型及車牌號碼。</span></dd>
+          <dd class="aside">DAMAC Executive Properties building, Dubai <span class="zh" lang="zh-Hans">迪拜巴沙高地，DAMAC Executive Properties 大楼</span></dd>
+          <dd class="aside">Free parking inside the building — please have your car model and plate number ready for the parking security entrance. <span class="zh" lang="zh-Hans">大楼内设有免费停车场，请于停车场保安入口准备好您的车型及车牌号码。</span></dd>
         </div>
 
         <div>
           <dt>Children</dt>
-          <dd>Children are very welcome, please tell us how many <span class="zh" lang="zh-Hant">歡迎攜同小朋友，請告知人數</span></dd>
+          <dd>Children are very welcome, please tell us how many <span class="zh" lang="zh-Hans">欢迎携同小朋友，请告知人数</span></dd>
         </div>
       </dl>
     </div>
@@ -608,8 +608,8 @@
         <svg class="peony" focusable="false"><use href="#peony"/></svg>
       </div>
 
-      <h2 id="rsvp-title">Will you join us <span class="zh" lang="zh-Hant">敬請回覆</span></h2>
-      <p class="deadline">Please reply by 18 September <span class="zh" lang="zh-Hant">請於九月十八日前回覆</span></p>
+      <h2 id="rsvp-title">Will you join us <span class="zh" lang="zh-Hans">敬请回复</span></h2>
+      <p class="deadline">Please reply by 18 September <span class="zh" lang="zh-Hans">请于九月十八日前回复</span></p>
 
       <div id="form-slot">
         <form name="rsvp-hundred-days" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="rsvp-form">
@@ -617,37 +617,37 @@
           <p class="hidden-field"><label>Leave this empty <input name="bot-field" tabindex="-1"></label></p>
 
           <div class="field">
-            <label for="name">Your name <span class="zh" lang="zh-Hant">您的姓名</span></label>
+            <label for="name">Your name <span class="zh" lang="zh-Hans">您的姓名</span></label>
             <input type="text" id="name" name="name" autocomplete="name" required>
           </div>
 
           <fieldset>
-            <legend class="legend">Can you make it <span class="zh" lang="zh-Hant">能否出席</span></legend>
+            <legend class="legend">Can you make it <span class="zh" lang="zh-Hans">能否出席</span></legend>
             <div class="choices">
               <label class="choice">
                 <input type="radio" name="attending" value="Yes" checked>
-                <span>Yes, we will be there <span class="zh" lang="zh-Hant">我們會出席</span></span>
+                <span>Yes, we will be there <span class="zh" lang="zh-Hans">我们会出席</span></span>
               </label>
               <label class="choice">
                 <input type="radio" name="attending" value="No">
-                <span>Sorry, we cannot come <span class="zh" lang="zh-Hant">恕難出席</span></span>
+                <span>Sorry, we cannot come <span class="zh" lang="zh-Hans">恕难出席</span></span>
               </label>
             </div>
           </fieldset>
 
           <div class="counts" id="counts">
             <div class="field">
-              <label for="adults">Adults <span class="zh" lang="zh-Hant">成人人數</span></label>
+              <label for="adults">Adults <span class="zh" lang="zh-Hans">成人人数</span></label>
               <input type="number" id="adults" name="adults" min="0" step="1" inputmode="numeric" value="1">
             </div>
             <div class="field">
-              <label for="children">Children <span class="zh" lang="zh-Hant">兒童人數</span></label>
+              <label for="children">Children <span class="zh" lang="zh-Hans">儿童人数</span></label>
               <input type="number" id="children" name="children" min="0" step="1" inputmode="numeric" value="0">
             </div>
           </div>
 
           <div class="field">
-            <label for="note">Anything we should know <span class="zh" lang="zh-Hant">備註</span></label>
+            <label for="note">Anything we should know <span class="zh" lang="zh-Hans">备注</span></label>
             <input type="text" id="note" name="note" placeholder="Allergies, a high chair, arriving late">
           </div>
 
@@ -666,7 +666,7 @@
   <footer class="closing">
     <div class="wrap">
       <svg class="peony" aria-hidden="true" focusable="false"><use href="#peony"/></svg>
-      <p class="hundred" lang="zh-Hant">百日快樂</p>
+      <p class="hundred" lang="zh-Hans">百日快乐</p>
       <p class="love">With love, Daniel and Robert</p>
     </div>
   </footer>
@@ -793,8 +793,8 @@
     head.appendChild(document.createTextNode('Thank you, we have your reply '));
     var zh = document.createElement('span');
     zh.className = 'zh';
-    zh.lang = 'zh-Hant';
-    zh.textContent = '已收到您的回覆';
+    zh.lang = 'zh-Hans';
+    zh.textContent = '已收到您的回复';
     head.appendChild(zh);
 
     var body = document.createElement('p');
