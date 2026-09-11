@@ -4,9 +4,7 @@
 # This repo is what would get published, so track only what the page loads.
 # The camera original and the unused photos stay local.
 photos/*
+!photos/hero.webp
 !photos/01.webp
 !photos/02.webp
 !photos/03.webp
-!photos/hero.mp4
-!photos/hero-hevc.mp4
-!photos/hero-poster.jpg

@@ -13,8 +13,7 @@
   ============================================================================
   1. PHOTOS          line 525
                      Drop these files into the sibling /photos folder:
-                       photos/hero.mp4  photos/hero-hevc.mp4   (the hero clip)
-                       photos/hero-poster.jpg                  (its first frame)
+                       photos/hero.webp
                        photos/01.webp photos/02.webp photos/03.webp
                      Any file that is missing shows a dashed placeholder with
                      its filename, so you can see at a glance what is still
@@ -211,12 +210,8 @@
   .shot:hover img, .shot:focus-visible img{ transform: scale(1.035); }
 
   .shot--hero{ grid-column: 1 / -1; }
-  .shot--hero .shot__frame{ aspect-ratio: 5 / 6; }
-
-  /* the hero clip is square, as it was filmed, so nothing is cropped away.
-     This has to sit after .shot--hero to win the cascade. */
-  .shot--video{ cursor: default; }
-  .shot--video .shot__frame{ aspect-ratio: 1 / 1; }
+  /* matches the hero graphic's own proportions, so nothing is cropped away */
+  .shot--hero .shot__frame{ aspect-ratio: 900 / 636; }
 
   .shot--wide{ grid-column: 1 / -1; margin-top: .5rem; }
   .shot--wide .shot__frame{
@@ -533,18 +528,9 @@
       </div>
 
       <div class="shots" id="shots">
-        <!-- HERO_CLIP: the still photo is now a short silent loop. The poster
-             is its own first frame, so there is no jump when it starts. -->
-        <div class="shot shot--hero shot--video">
-          <span class="shot__frame">
-            <video id="hero-clip" poster="photos/hero-poster.jpg"
-                   autoplay muted loop playsinline preload="metadata"
-                   aria-label="Izza and Bella side by side in their crib, moving and looking about">
-              <source src="photos/hero-hevc.mp4" type="video/mp4; codecs=hvc1">
-              <source src="photos/hero.mp4" type="video/mp4">
-            </video>
-          </span>
-        </div>
+        <button type="button" class="shot shot--hero" data-src="photos/hero.webp" aria-label="Open a larger view of Izza and Bella">
+          <span class="shot__frame"><img src="photos/hero.webp" alt="A red and gold Happy 100 Days graphic with cranes, clouds and peonies, framing photos of Izza and Bella in matching cheongsam-style outfits" fetchpriority="high" decoding="async"></span>
+        </button>
 
         <button type="button" class="shot" data-src="photos/01.webp" aria-label="Open a larger view of Bella in her bath">
           <span class="shot__frame"><img src="photos/01.webp" alt="Bella in her bath, holding on to a hand" loading="lazy" decoding="async"></span>
@@ -705,17 +691,6 @@
     slot.appendChild(file);
     frame.textContent = '';
     frame.appendChild(slot);
-  }
-
-  /* The hero clip autoplays silently. If the guest's phone or laptop is set
-     to reduce motion, leave it on its poster frame and give them a control
-     instead of moving the picture at them. */
-  var clip = document.getElementById('hero-clip');
-  if (clip && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    clip.autoplay = false;
-    clip.loop = false;
-    clip.controls = true;
-    clip.pause();
   }
 
   var images = document.querySelectorAll('.shot img');
